@@ -1004,6 +1004,7 @@ typedef NS_ENUM(NSInteger, MessagesRangeSizeMode) {
     [super viewWillDisappear:animated];
 
     [self.inputToolbar viewWillDisappear:animated];
+    [self.inputToolbar endEditingTextMessage];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -1020,7 +1021,6 @@ typedef NS_ENUM(NSInteger, MessagesRangeSizeMode) {
     [self markVisibleMessagesAsRead];
     [self cancelVoiceMemo];
     [self.cellMediaCache removeAllObjects];
-    [self.inputToolbar endEditingTextMessage];
 
     self.isUserScrolling = NO;
 }
