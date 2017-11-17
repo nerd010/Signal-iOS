@@ -398,9 +398,7 @@ NSString * const kOWSTableCellIdentifier = @"kOWSTableCellIdentifier";
 #pragma clang diagnostic pop
     }
     [self.view addSubview:self.tableView];
-    [self.tableView autoPinWidthToSuperview];
-    [self.tableView autoPinToTopLayoutGuideOfViewController:self withInset:0];
-    [self.tableView autoPinToBottomLayoutGuideOfViewController:self withInset:0];
+    [self.tableView autoPinToSuperviewEdges];
 
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kOWSTableCellIdentifier];
 }
