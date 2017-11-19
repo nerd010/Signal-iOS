@@ -3992,6 +3992,8 @@ typedef NS_ENUM(NSInteger, MessagesRangeSizeMode) {
 
             ConversationViewItem *_Nullable viewItem = self.viewItemMap[interaction.uniqueId];
             if (viewItem) {
+                // It's possible the interaction has been updated.
+                [viewItem replaceInteraction:interaction transaction:transaction];
                 viewItem.previousRow = viewItem.row;
             } else {
                 viewItem = [[ConversationViewItem alloc] initWithInteraction:interaction
